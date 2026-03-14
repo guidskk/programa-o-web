@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 02</title>
+</head>
+
+<body>
+
+<h1>Jogo: Pedra, Papel ou Tesoura</h1>
+<p>Abra o console do navegador para ver o resultado.</p>
+<button onclick="jogar()">Jogar</button>
+
+<script>
+
+function jogar(){
+
+    // escolha do usuário
+    let usuario = prompt("Escolha: pedra, papel ou tesoura").toLowerCase();
+
+    // opções do computador
+    let opcoes = ["pedra", "papel", "tesoura"];
+
+    // número aleatório de 0 a 2
+    let numeroAleatorio = Math.floor(Math.random() * 3);
+
+    // escolha do computador
+    let computador = opcoes[numeroAleatorio];
+
+    console.log("Usuário escolheu: " + usuario);
+    console.log("Computador escolheu: " + computador);
+
+    if(usuario === computador){
+        console.log("Empate!");
+    }
+    else if(
+        (usuario === "pedra" && computador === "tesoura") ||
+        (usuario === "papel" && computador === "pedra") ||
+        (usuario === "tesoura" && computador === "papel")
+    ){
+        console.log("Você venceu!");
+    }
+    else{
+        console.log("O computador venceu!");
+    }
+
+}
+
+</script>
+
+</body>
+</html>

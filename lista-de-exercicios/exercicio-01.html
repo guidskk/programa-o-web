@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 01</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    input, button{
+        padding: 10px;
+        font-size: 16px;
+        margin: 5px;
+    }
+    #mensagem{
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Jogo de Adivinhação</h1>
+<p>Tente adivinhar o número secreto entre <b>1 e 20</b></p>
+
+<input type="number" id="palpite" min="1" max="20">
+<button onclick="verificarPalpite()">Tentar</button>
+
+<p id="mensagem"></p>
+
+<script>
+
+// gerando numero aleatorio
+let numeroSecreto = Math.floor(Math.random() * 20) + 1;
+let tentativas = 0;
+
+function verificarPalpite(){
+    let palpite = Number(document.getElementById("palpite").value);
+    let mensagem = document.getElementById("mensagem");
+    
+    tentativas++;
+
+    if(palpite === numeroSecreto){
+        mensagem.textContent = "🎉 Parabéns! Você acertou em " + tentativas + " tentativas!";
+    }
+    else if(palpite > numeroSecreto){
+        mensagem.textContent = "⬇️ O número secreto é MENOR!";
+    }
+    else{
+        mensagem.textContent = "⬆️ O número secreto é MAIOR!";
+    }
+}
+
+</script>
+
+</body>
+</html>

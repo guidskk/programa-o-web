@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 03</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+table{
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 8px 15px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Gerador de Tabuada</h1>
+
+<script>
+
+let numero = parseInt(prompt("Digite um número para ver a tabuada:"));
+
+document.write("<h2>Tabuada do " + numero + "</h2>");
+document.write("<table>");
+document.write("<tr><th>Multiplicação</th><th>Resultado</th></tr>");
+
+for(let i = 1; i <= 10; i++){
+    document.write("<tr>");
+    document.write("<td>" + numero + " x " + i + "</td>");
+    document.write("<td>" + (numero * i) + "</td>");
+    document.write("</tr>");
+}
+
+document.write("</table>");
+
+</script>
+
+</body>
+</html>

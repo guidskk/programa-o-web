@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 05</title>
+</head>
+<body>
+
+<h1>Soma da Série 1 + 11 + 111 + ...</h1>
+
+<script>
+
+let n = parseInt(prompt("Digite a quantidade de termos:"));
+
+let termo = "";
+let soma = 0;
+let serie = "";
+
+for(let i = 1; i <= n; i++){
+
+    termo += "1";             
+    let numero = parseInt(termo);
+
+    soma += numero;
+
+    if(i == n){
+        serie += numero;
+    } else {
+        serie += numero + " + ";
+    }
+}
+
+document.write("<h3>" + serie + "</h3>");
+document.write("<h2>A soma é: " + soma.toLocaleString("pt-BR") + "</h2>");
+
+</script>
+
+</body>
+</html>
